@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="./styles/style.css?v=1.5">
+    <link rel="stylesheet" href="./styles/style.css?v=1.8">
     <script type="module" src="./bootstrap/js/bootstrap.js"></script>
     <script type="module" src="./js/script.js" defer></script>
     <title>Portifolio</title>
@@ -37,6 +37,9 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#curriculo">Currículo</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contato">Contato</a>
                         </li>
                     </ul>
                 </div>
@@ -107,8 +110,40 @@
         </div>
 
         <div id="skill" class="container-fluid">
-            <section class="skill hidden">
-                <h2 class="container-conteudo-titulo-secundario">Skills</h2>
+            <section class="skills-section ">
+
+
+                <h1 class="container-conteudo-titulo-secundario">Tecnologias </h1>
+
+
+                <div class="skills-grid hidden">
+                    <div class="category">
+                        <h3>Desenvolvimento</h3>
+                        <div class="skill-item"><img src="https://skillicons.dev/icons?i=html" /> HTML5</div>
+                        <div class="skill-item"><img src="https://skillicons.dev/icons?i=css" /> CSS3</div>
+                        <div class="skill-item"><img src="https://skillicons.dev/icons?i=js" /> JavaScript</div>
+                        <div class="skill-item"><img src="https://skillicons.dev/icons?i=ts" /> TypeScript</div>
+                        <div class="skill-item"><img src="https://skillicons.dev/icons?i=react" /> React</div>
+                        <div class="skill-item"><img src="https://skillicons.dev/icons?i=angular" /> Angular</div>
+                        <div class="skill-item"><img src="https://skillicons.dev/icons?i=nodejs" /> Node.js</div>
+                        <div class="skill-item"><img src="https://skillicons.dev/icons?i=flutter" /> Flutter (Dart)
+                        </div>
+                    </div>
+
+                    <div class="category">
+                        <h3>Backend & Outras</h3>
+                        <div class="skill-item"><img src="https://skillicons.dev/icons?i=java" /> Java</div>
+                        <div class="skill-item"><img src="https://skillicons.dev/icons?i=python" /> Python</div>
+                        <div class="skill-item"><img src="https://skillicons.dev/icons?i=php" /> PHP</div>
+                    </div>
+
+                    <div class="category">
+                        <h3>Dados & Ferramentas</h3>
+                        <div class="skill-item"><img src="https://skillicons.dev/icons?i=postgres" /> PostgreSQL</div>
+                        <div class="skill-item"><img src="https://skillicons.dev/icons?i=git" /> Git</div>
+                        <div class="skill-item"><img src="https://skillicons.dev/icons?i=py" /> Power BI</div>
+                    </div>
+                </div>
             </section>
         </div>
 
@@ -178,9 +213,177 @@
 
         <div id="curriculo" class="container-fluid">
             <section class="curriculo">
-                <h2 class="container-conteudo-titulo-secundario">Currículo</h2>
-            </section>
+
+
+                <h2 class="container-conteudo-titulo-secundario">Educação & Experiência</h2>
+
+
+                <div class="resume-grid hidden">
+                    <div class="resume-column">
+                        <div class="column-title">
+                            <span class="icon-box">🎓</span>
+                            <h3>Educação</h3>
+                        </div>
+
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <p class="timeline-date">Conclusão: Dez/2025</p>
+                                <h4>Ciência da Computação (Bacharelado)</h4>
+                                <p class="timeline-institution">UDF (Centro Universitário do Distrito Federal)</p>
+                                <p class="timeline-description">Focado em desenvolvimento e análise de dados, com sólida
+                                    base teórica e prática em computação.</p>
+                            </div>
+                        </div>
+
+                        <div class="complementary-courses">
+                            <h4>Cursos Especializados</h4>
+                            <div class="course-tags">
+                                <span>React do Zero a Maestria (Udemy)</span>
+                                <span>Master DAX Power BI (Udemy)</span>
+                                <span>JavaScript & Node.js (Udemy)</span>
+                                <span>Copilot Studio: Multiagentes (Alura)</span>
+                                <span>Lógica de Programação (Bradesco)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="resume-column">
+                        <div class="column-title">
+                            <span class="icon-box">💼</span>
+                            <h3>Experiência</h3>
+                        </div>
+
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <p class="timeline-date">Fev/2024 - Dez/2025</p>
+                                <h4>Analista de Dados (Estagiário)</h4>
+                                <p class="timeline-institution">Banco do Brasil</p>
+                                <p class="timeline-description">
+                                    Extração de informações estratégicas e análise de indicadores financeiros e
+                                    operacionais.
+                                    Domínio de ferramentas de BI, Excel avançado, Power BI e SQL para identificação de
+                                    padrões e tendências.
+                                </p>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="certificates-wrapper">
+                    <div class="column-title resume-grid hidden">
+                        <span class="icon-box">📜</span>
+                        <h3>Certificados</h3>
+                    </div>
+
+                    <div class="cert-slider hidden">
+                        <div class="cert-track">
+                            <a href="#" target="_blank" class="cert-card-v2">
+                                <div class="cert-inner-content">
+                                    <div class="cert-header">
+                                        <span class="cert-platform">UDEMY</span>
+                                        <span class="cert-hours">17,5h</span>
+                                    </div>
+                                    <h4>Master DAX Power BI</h4>
+                                    <p>Modelagem de dados e cálculos orientados a projetos.</p>
+                                </div>
+                                <div class="cert-footer"><span class="btn-view">Ver Certificado ↗</span></div>
+                            </a>
+
+                            <a href="#" target="_blank" class="cert-card-v2">
+                                <div class="cert-inner-content">
+                                    <div class="cert-header">
+                                        <span class="cert-platform">ALURA</span>
+                                        <span class="cert-hours">8h</span>
+                                    </div>
+                                    <h4>Copilot Studio (IA)</h4>
+                                    <p>Criação de soluções multiagentes de inteligência artificial.</p>
+                                </div>
+                                <div class="cert-footer"><span class="btn-view">Ver Certificado ↗</span></div>
+                            </a>
+
+                            <a href="#" target="_blank" class="cert-card-v2">
+                                <div class="cert-inner-content">
+                                    <div class="cert-header">
+                                        <span class="cert-platform">FUNDAÇÃO BRADESCO</span>
+                                        <span class="cert-hours">15h</span>
+                                    </div>
+                                    <h4>Lógica de Programação</h4>
+                                    <p>Fundamentos essenciais de algoritmos e estruturas.</p>
+                                </div>
+                                <div class="cert-footer"><span class="btn-view">Ver Certificado ↗</span></div>
+                            </a>
+
+                            <div class="cert-card-v2 disabled">
+                                <div class="cert-inner-content">
+                                    <div class="cert-header">
+                                        <span class="cert-platform">UDEMY</span>
+                                        <span class="cert-status">Em andamento</span>
+                                    </div>
+                                    <h4>React do Zero a Maestria</h4>
+                                    <p>Desenvolvimento web moderno com hooks e APIs.</p>
+                                </div>
+                                <div class="cert-footer"><span class="btn-view gray">Indisponível</span></div>
+                            </div>
+                            <a href="#" target="_blank" class="cert-card-v2">
+                                <div class="cert-inner-content">
+                                    <div class="cert-header">
+                                        <span class="cert-platform">UDEMY</span>
+                                        <span class="cert-hours">17,5h</span>
+                                    </div>
+                                    <h4>Master DAX Power BI</h4>
+                                    <p>Modelagem de dados e cálculos orientados a projetos.</p>
+                                </div>
+                                <div class="cert-footer"><span class="btn-view">Ver Certificado ↗</span></div>
+                            </a>
+
+                            <a href="#" target="_blank" class="cert-card-v2">
+                                <div class="cert-inner-content">
+                                    <div class="cert-header">
+                                        <span class="cert-platform">ALURA</span>
+                                        <span class="cert-hours">8h</span>
+                                    </div>
+                                    <h4>Copilot Studio (IA)</h4>
+                                    <p>Criação de soluções multiagentes de inteligência artificial.</p>
+                                </div>
+                                <div class="cert-footer"><span class="btn-view">Ver Certificado ↗</span></div>
+                            </a>
+
+                            <a href="#" target="_blank" class="cert-card-v2">
+                                <div class="cert-inner-content">
+                                    <div class="cert-header">
+                                        <span class="cert-platform">FUNDAÇÃO BRADESCO</span>
+                                        <span class="cert-hours">15h</span>
+                                    </div>
+                                    <h4>Lógica de Programação</h4>
+                                    <p>Fundamentos essenciais de algoritmos e estruturas.</p>
+                                </div>
+                                <div class="cert-footer"><span class="btn-view">Ver Certificado ↗</span></div>
+                            </a>
+
+                            <div class="cert-card-v2 disabled">
+                                <div class="cert-inner-content">
+                                    <div class="cert-header">
+                                        <span class="cert-platform">UDEMY</span>
+                                        <span class="cert-status">Em andamento</span>
+                                    </div>
+                                    <h4>React do Zero a Maestria</h4>
+                                    <p>Desenvolvimento web moderno com hooks e APIs.</p>
+                                </div>
+                                <div class="cert-footer"><span class="btn-view gray">Indisponível</span></div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
         </div>
+
+        </section>
+        </div>
+
         <div id="contato" class="container-fluid">
             <section class="contato">
                 <h2 class="container-conteudo-titulo-secundario">Contato</h2>

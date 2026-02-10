@@ -1,28 +1,21 @@
+/* ==========================================================================
+   1. VARIÁVEIS E CONFIGURAÇÕES GLOBAIS
+   ========================================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap');
 
-/* VARIÁVEIS E RAIZ */
 :root {
     --cor-primaria: #121212;
-    /* Fundo moderno e profundo */
     --cor-secundaria: #f5f5f5;
-    /* Off-white para títulos */
     --cor-terciaria: #9322fd;
-    /* Roxo principal */
     --cor-quartenaria: #6e01b8;
-    /* Roxo escuro */
     --cor-hover: rgba(147, 34, 253, 0.2);
-
-    /* Suporte para o Minimalismo e Glassmorphism */
     --cor-texto-corpo: #a0a0a0;
-    /* Cinza para textos longos */
     --cor-borda-vidro: rgba(255, 255, 255, 0.1);
     --cor-bg-vidro: rgba(255, 255, 255, 0.03);
-
     --fonte-primaria: 'Krona One', sans-serif;
     --fonte-secundaria: 'Montserrat', sans-serif;
 }
 
-/* RESET E ESTILOS GLOBAIS */
 * {
     box-sizing: border-box;
 }
@@ -35,33 +28,38 @@ body {
     padding-top: 70px;
 }
 
-/* NAVEGAÇÃO (NAVBAR) - Efeito Glassmorphism */
+/* ==========================================================================
+   2. NAVEGAÇÃO (NAVBAR)
+   ========================================================================== */
 .navbar {
     padding: 0.5rem;
     background: rgba(18, 18, 18, 0.7) !important;
-    /* Fundo translúcido */
     backdrop-filter: blur(15px) saturate(150%);
-    /* Desfoque do vidro */
     -webkit-backdrop-filter: blur(15px) saturate(150%);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-
-    /* Alteração principal aqui: fixed para flutuar sempre */
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 9999;
-    /* Garante que fique acima de tudo */
 }
 
 .navbar .nav-link {
     color: var(--cor-secundaria) !important;
     transition: color 0.3s ease;
+    font-size: 1.2rem;
+    text-decoration: none;
+    position: relative;
+    padding: 5px;
 }
 
-/* Cor de destaque ao passar o mouse nos links da navbar */
 .navbar .nav-link:hover {
     color: var(--cor-terciaria) !important;
+}
+
+.navbar .nav-link a {
+    color: inherit !important;
+    text-decoration: none;
 }
 
 .navbar-expand-lg .navbar-nav {
@@ -71,14 +69,6 @@ body {
 
 .nav-item {
     margin: 0 10px;
-}
-
-.nav-link {
-    font-size: 1.2rem;
-    text-decoration: none;
-    color: var(--cor-secundaria);
-    position: relative;
-    padding: 5px;
 }
 
 .nav-link::after {
@@ -98,57 +88,9 @@ body {
     visibility: visible;
 }
 
-.navbar .nav-link a {
-    color: inherit !important;
-    text-decoration: none;
-}
-
-/* COMPONENTES REUTILIZÁVEIS (BOTÕES) */
-.container-conteudo-botao {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-content: center;
-    margin-top: 1.5rem;
-    gap: 1.5rem;
-}
-
-.container-conteudo-botao-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid var(--cor-terciaria);
-    border-radius: 5rem;
-    width: 10rem;
-    height: 4rem;
-    cursor: pointer;
-    transition: .5s;
-    background-color: var(--cor-terciaria);
-    font-size: 1.5rem;
-    font-family: var(--fonte-secundaria);
-    color: var(--cor-secundaria);
-}
-
-.container-conteudo-botao-link svg {
-    width: 2rem;
-    height: 2rem;
-    color: var(--cor-secundaria);
-}
-
-.container-conteudo-botao-link:hover,
-.btn-card:hover {
-    background-color: var(--cor-hover);
-    backdrop-filter: blur(4px);
-    scale: 1.05;
-}
-
-.container-conteudo-botao-subtitulo {
-    font-family: var(--fonte-primaria);
-    font-weight: 400;
-    font-size: 1.5rem;
-}
-
-/* SEÇÃO TOP / HERO */
+/* ==========================================================================
+   3. SEÇÃO HERO (TOP CONTAINER)
+   ========================================================================== */
 #top-container.container-fluid {
     position: relative;
     width: 100%;
@@ -198,241 +140,17 @@ body {
     color: var(--cor-terciaria);
 }
 
-/* ESTRUTURA GERAL DE SEÇÕES */
-.sobre,
-.curriculo,
-.skill,
-.projetos,
-.contato {
-    min-height: 100vh;
-    background-color: var(--cor-primaria);
-    border-top: 1px solid var(--cor-borda-vidro);
-}
-
-/* SEÇÃO SOBRE */
-.sobre {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 5% 10%;
-    gap: 2rem;
-}
-
-.container-conteudo-titulo-secundario {
-    text-align: center;
+.container-conteudo-botao-subtitulo {
     font-family: var(--fonte-primaria);
-    font-size: 3.5rem;
-    margin-top: 1.5em;
-    color: var(--cor-secundaria);
+    font-weight: 400;
+    font-size: 1.5rem;
 }
 
-.sobre-conteudo {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+/* ==========================================================================
+   4. COMPONENTES REUTILIZÁVEIS (CARDS E BOTÕES)
+   ========================================================================== */
 
-.container-conteudo-texto {
-    width: 75%;
-    font-size: 1.3rem;
-    font-family: var(--fonte-secundaria);
-    margin-bottom: 1rem;
-    color: var(--cor-texto-corpo);
-    line-height: 1.6;
-}
-
-.container-imagem {
-    width: 40%;
-}
-
-/* SEÇÃO PROJETOS E CARDS - Efeito Glassmorphism */
-.projetos {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 3% 0;
-    gap: 2rem;
-}
-
-.projeto-caixa {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-    gap: 2rem;
-    max-width: 1500px;
-    margin: 0 auto;
-}
-
-.card {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    background: var(--cor-bg-vidro);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border: 1px solid var(--cor-borda-vidro);
-    border-radius: 15px;
-    color: var(--cor-secundaria);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    overflow: hidden;
-}
-
-.card:hover {
-    box-shadow: 0 10px 30px rgba(147, 34, 253, 0.15);
-    transform: translateY(-5px);
-    border-color: var(--cor-terciaria);
-}
-
-.btn-card-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    margin-top: 1.5rem;
-    width: 100%;
-}
-
-.btn-card-container .btn {
-    font-family: var(--fonte-secundaria);
-    text-decoration: none;
-}
-
-/* RODAPÉ */
-.rodape {
-    color: var(--cor-texto-corpo);
-    padding: 2rem;
-    text-align: center;
-    font-family: var(--fonte-secundaria);
-    font-size: 1rem;
-    border-top: 1px solid var(--cor-borda-vidro);
-}
-
-/* Estado Inicial: Escondido */
-.hidden {
-    opacity: 0;
-    filter: blur(5px);
-    transform: translateY(30px);
-    transition: all 0.8s ease-out;
-}
-
-/* Estado Final: Visível (ativado pelo JS) */
-.show {
-    opacity: 1;
-    filter: blur(0);
-    transform: translateY(0);
-}
-
-/* Delay para elementos em sequência (opcional) */
-.projeto-caixa .card:nth-child(2) {
-    transition-delay: 200ms;
-}
-
-.projeto-caixa .card:nth-child(3) {
-    transition-delay: 400ms;
-}
-
-
-/* MEDIA QUERIES */
-@media (max-width: 1000px) {
-    .sobre {
-        padding: 5% 5%;
-    }
-
-    .container-conteudo-titulo-secundario {
-        margin-top: 3em;
-        font-size: 2rem;
-    }
-
-    .container-conteudo-texto {
-        font-size: 1.2rem;
-    }
-}
-
-@media (max-width: 750px) {
-    .container-conteudo-titulo-secundario {
-        margin-top: 3em;
-        font-size: 1.5rem;
-    }
-
-    .container-conteudo-texto,
-    .rodape {
-        font-size: .89rem;
-    }
-}
-
-
-
-
-/*
-@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap');
-
-:root {
-    --cor-primaria: #1d1d1d;
-    --cor-secundaria: #ffffff;
-    --cor-terciaria: #9322fd;
-    --cor-quartenaria: #6e01b8;
-    --cor-hover: rgba(111, 1, 184, 0.35);
-
-    --fonte-primaria: 'Krona One', sans-serif;
-    --fonte-secundaria: 'Montserrat', sans-serif;
-}
-
-* {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-    background-color: var(--cor-primaria);
-    color: var(--cor-secundaria);
-}
-
-.navbar {
-    padding: 0.5rem;
-    border-bottom: 2px solid #ccc;
-}
-
-.navbar-expand-lg .navbar-nav {
-    padding: 10px 25px;
-    font-weight: bold;
-}
-
-.nav-item {
-    margin: 0 10px;
-}
-
-.nav-link {
-    font-size: 1.2rem;
-    text-decoration: none;
-    color: var(--cor-quartenaria);
-    position: relative;
-    padding: 5px;
-}
-
-.nav-link::after {
-    content: "";
-    height: 2px;
-    width: 0;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    background: linear-gradient(90deg, var(--cor-terciaria), var(--cor-quartenaria));
-    transition: width 0.5s ease-in-out, visibility 0.5s;
-    visibility: hidden;
-}
-
-.nav-link:hover::after {
-    width: 100%;
-    visibility: visible;
-}
-
-.navbar .nav-link a {
-    color: #212529;
-}
-
+/* Botões Gerais */
 .container-conteudo-botao {
     display: flex;
     flex-direction: row;
@@ -467,138 +185,28 @@ body {
 .container-conteudo-botao-link:hover,
 .btn-card:hover {
     background-color: var(--cor-hover);
+    backdrop-filter: blur(4px);
     scale: 1.05;
 }
 
-.container-conteudo-botao-subtitulo {
-    font-family: var(--fonte-primaria);
-    font-weight: 400;
-    font-size: 1.5rem;
-}
-
-#top-container.container-fluid {
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-
-#top-container.container-fluid::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/1.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    filter: blur(10px);
-    transform: scale(1.1);
-    z-index: -1;
-}
-
-.container-conteudo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100vh;
-    text-align: center;
-}
-
-.container-conteudo-titulo {
-    font-size: 4rem;
-    font-family: var(--fonte-primaria);
-}
-
-.titulo-destaque {
-    font-size: 2rem;
-    font-family: var(--fonte-primaria);
-    color: var(--cor-terciaria);
-}
-
-.sobre,
-.curriculo,
-.skill,
-.projetos,
-.contato {
-    min-height: 100vh;
-    background-color: var(--cor-primaria);
-    border-top: 1px solid #ffffff;
-}
-
-.sobre {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 5% 10%;
-    gap: 2rem;
-}
-
-.container-conteudo-titulo-secundario {
-    text-align: center;
-    font-family: var(--fonte-primaria);
-    font-size: 3.5rem;
-    margin-top: 1.5em;
-    color: var(--cor-secundaria);
-}
-
-.sobre-conteudo {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.container-conteudo-texto {
-    width: 75%;
-    font-size: 1.3rem;
-    font-family: var(--fonte-secundaria);
-    margin-bottom: 1rem;
-}
-
-.container-imagem {
-    width: 40%;
-}
-
-.projetos {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 3% 0;
-    gap: 2rem;
-}
-
-.projeto-caixa {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-    gap: 2rem;
-    max-width: 1500px;
-    margin: 0 auto;
-}
-
+/* Estilo de Card Base */
 .card {
     height: 100%;
     display: flex;
     flex-direction: column;
-    background-color: #333232;
-    color: #ffffff;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    background: var(--cor-bg-vidro);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid var(--cor-borda-vidro);
+    border-radius: 15px;
+    color: var(--cor-secundaria);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     overflow: hidden;
 }
 
 .card:hover {
-    box-shadow: 0 10px 20px var(--cor-hover);
-    transform: translateY(-2px) scale(1.03);
+    transform: scale(1.03);
+    border-color: var(--cor-terciaria);
 }
 
 .btn-card-container {
@@ -615,12 +223,431 @@ body {
     text-decoration: none;
 }
 
-.rodape {
+/* ==========================================================================
+   5. SEÇÃO SOBRE
+   ========================================================================== */
+.sobre {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5% 10%;
+    gap: 2rem;
+    min-height: 100vh;
+}
+
+.sobre-conteudo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-conteudo-titulo-secundario {
+    text-align: center;
+    font-family: var(--fonte-primaria);
+    font-size: 3.5rem;
+    margin-top: 1rem;
+    margin-bottom: 4rem;
+
     color: var(--cor-secundaria);
-    padding: 1.5rem;
+}
+
+.container-conteudo-texto {
+    width: 75%;
+    font-size: 1.3rem;
+    font-family: var(--fonte-secundaria);
+    margin-bottom: 1rem;
+    color: var(--cor-texto-corpo);
+    line-height: 1.6;
+}
+
+.container-imagem {
+    width: 40%;
+}
+
+/* ==========================================================================
+   6. SEÇÃO SKILLS
+   ========================================================================== */
+#skill {
+    background-color: #1a1a1a;
+    color: var(--cor-secundaria);
+    padding: 100px 20px;
+    font-family: var(--fonte-secundaria);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.category h3 {
+    font-family: var(--fonte-primaria);
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: 40px;
+    color: var(--cor-secundaria);
+    border-bottom: 1px solid var(--cor-borda-vidro);
+    padding-bottom: 15px;
+}
+
+.skill-item {
+    background: var(--cor-bg-vidro);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--cor-borda-vidro);
+    border-radius: 16px;
+    padding: 16px 24px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-weight: 500;
+    color: var(--cor-texto-corpo);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.skill-item img {
+    width: 28px;
+    height: 28px;
+    filter: brightness(0.8) saturate(0.8);
+    transition: filter 0.3s ease;
+}
+
+.skill-item:hover {
+    background: var(--cor-hover);
+    border-color: var(--cor-terciaria);
+    color: var(--cor-secundaria);
+    transform: scale(1.05);
+}
+
+.skill-item:hover img {
+    filter: brightness(1) saturate(1);
+}
+
+/* ==========================================================================
+   7. SEÇÃO PROJETOS
+   ========================================================================== */
+.projetos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3% 0;
+    gap: 2rem;
+    min-height: 100vh;
+}
+
+.projeto-caixa {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: 2rem;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   8. SEÇÃO CURRÍCULO E TIMELINE
+   ========================================================================== */
+#curriculo {
+    background-color: #1a1a1a;
+}
+
+.curriculo {
+    min-height: 100vh;
+    padding: 80px 0;
+    font-family: var(--fonte-secundaria);
+}
+
+.resume-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.column-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.icon-box {
+    background: var(--cor-bg-vidro);
+    border: 1px solid var(--cor-terciaria);
+    padding: 8px 12px;
+    border-radius: 10px;
+}
+
+/* Timeline */
+.timeline {
+    border-left: 2px solid var(--cor-borda-vidro);
+    padding-left: 25px;
+    margin-left: 15px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -32px;
+    top: 5px;
+    width: 12px;
+    height: 12px;
+    background-color: var(--cor-terciaria);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--cor-terciaria);
+}
+
+.timeline-date {
+    color: var(--cor-terciaria);
+    font-weight: bold;
+    font-size: 0.85rem;
+    margin-bottom: 5px;
+}
+
+.timeline-item h4 {
+    color: var(--cor-secundaria);
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.timeline-institution {
+    color: var(--cor-texto-corpo);
+    font-style: italic;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.timeline-description {
+    color: var(--cor-texto-corpo);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Tags de Cursos */
+.course-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.course-tags span {
+    background: var(--cor-bg-vidro);
+    border: 1px solid var(--cor-borda-vidro);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    color: var(--cor-texto-corpo);
+    transition: 0.3s;
+}
+
+.course-tags span:hover {
+    border-color: var(--cor-terciaria);
+    background: var(--cor-hover);
+    color: var(--cor-secundaria);
+}
+
+/* ==========================================================================
+   9. CERTIFICADOS (GRID E SLIDER)
+   ========================================================================== */
+.certificates-wrapper {
+    margin-top: 50px;
+    width: 100%;
+}
+
+/* Grid de Certificados */
+.cert-grid-v2 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-top: 25px;
+    align-items: stretch;
+}
+
+/* Slider de Certificados */
+.cert-slider {
+    width: 100%;
+    overflow: hidden;
+    padding: 20px 0;
+    position: relative;
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.cert-track {
+    display: flex;
+    gap: 20px;
+    width: max-content;
+    animation: scrollSlider 25s linear infinite;
+}
+
+.cert-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scrollSlider {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-320px * 4 - 80px));
+    }
+}
+
+/* Card de Certificado Individual */
+.cert-card-v2 {
+    min-width: 320px;
+    background: #121212;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 20px;
+    text-decoration: none;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 220px;
+    transition: 0.3s ease;
+}
+
+.cert-card-v2::before {
+    content: "";
+    position: absolute;
+    top: 15%;
+    left: 0;
+    width: 3px;
+    height: 70%;
+    background: #9322fd;
+    border-radius: 0 4px 4px 0;
+}
+
+.cert-card-v2:hover:not(.disabled) {
+    border-color: #9322fd;
+    background: rgba(147, 34, 253, 0.05);
+}
+
+/* Conteúdo Interno do Certificado */
+.cert-inner-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cert-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cert-platform {
+    font-size: 0.65rem;
+    color: #9322fd;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.cert-hours,
+.cert-status {
+    font-size: 0.7rem;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.cert-card-v2 h4 {
+    color: #fff;
+    font-size: 0.95rem;
+    margin: 5px 0;
+}
+
+.cert-card-v2 p {
+    color: #a9a9a9;
+    font-size: 0.8rem;
+    line-height: 1.4;
+}
+
+.cert-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 10px;
+    margin-top: 10px;
+}
+
+.btn-view {
+    font-size: 0.75rem;
+    color: #9322fd;
+    font-weight: 600;
+}
+
+.cert-card-v2.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    border-style: dashed;
+}
+
+.btn-view.gray {
+    color: #666;
+}
+
+/* ==========================================================================
+10. CONTATO, RODAPÉ E ANIMAÇÕES
+   ========================================================================== */
+.contato {
+    min-height: 100vh;
+}
+
+.rodape {
+    color: var(--cor-texto-corpo);
+    padding: 2rem;
     text-align: center;
     font-family: var(--fonte-secundaria);
     font-size: 1rem;
+    border-top: 1px solid var(--cor-borda-vidro);
+}
+
+/* Classes de Animação (Scroll Reveal) */
+.hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+}
+
+.projeto-caixa .card:nth-child(2) {
+    transition-delay: 200ms;
+}
+
+.projeto-caixa .card:nth-child(3) {
+    transition-delay: 400ms;
+}
+
+/* ==========================================================================
+   11. MEDIA QUERIES (RESPONSIVIDADE)
+   ========================================================================== */
+
+/* Tablets e Desktops Pequenos */
+@media (max-width: 1200px) {
+    .cert-grid-v2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 1000px) {
@@ -631,11 +658,21 @@ body {
     .container-conteudo-titulo-secundario {
         margin-top: 3em;
         font-size: 2rem;
-        justify-content: center;
     }
 
     .container-conteudo-texto {
         font-size: 1.2rem;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Dispositivos Móveis */
+@media (max-width: 768px) {
+    .resume-grid {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -649,5 +686,16 @@ body {
     .rodape {
         font-size: .89rem;
     }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+
 }
-*/
+
+@media (max-width: 600px) {
+    .cert-grid-v2 {
+        grid-template-columns: 1fr;
+    }
+}

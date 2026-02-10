@@ -16,3 +16,21 @@ const observer = new IntersectionObserver((entries) => {
 // Seleciona todos os elementos com a classe hidden
 const hiddenElements = document.querySelectorAll('.hidden');
 hiddenElements.forEach((el) => observer.observe(el));
+
+document.addEventListener("DOMContentLoaded", () => {
+    const track = document.querySelector('.cert-track');
+    
+    // Opcional: Ajustar a velocidade dinamicamente
+    // track.style.animationDuration = "30s";
+
+    // Intersection Observer para disparar animações de entrada se necessário
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-in');
+            }
+        });
+    });
+
+    document.querySelectorAll('.cert-card-v2').forEach(card => observer.observe(card));
+});
