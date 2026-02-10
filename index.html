@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="./styles/style.css?v=1.8">
+    <link rel="stylesheet" href="./styles/style.css?v=2.0">
     <script type="module" src="./bootstrap/js/bootstrap.js"></script>
     <script type="module" src="./js/script.js" defer></script>
     <title>Portifolio</title>
@@ -78,9 +78,12 @@
         </div>
 
         <div id="sobre" class="container-fluid">
-            <section class="sobre hidden">
-                <h2 class="container-conteudo-titulo-secundario">Sobre mim</h2>
-                <div class="sobre-conteudo">
+            <section class="sobre-section hidden">
+                <div class="header">
+                    <h2>Sobre mim</h2>
+                </div>
+
+                <div class="sobre-conteudo ">
                     <p class="container-conteudo-texto">At vero eos et accusamus et iusto odio dignissimos ducimus qui
                         blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias
                         excepturi
@@ -111,11 +114,9 @@
 
         <div id="skill" class="container-fluid">
             <section class="skills-section ">
-
-
-                <h1 class="container-conteudo-titulo-secundario">Tecnologias </h1>
-
-
+                <div class="header">
+                    <h2>Tecnologias </h2>
+                </div>
                 <div class="skills-grid hidden">
                     <div class="category">
                         <h3>Desenvolvimento</h3>
@@ -148,8 +149,10 @@
         </div>
 
         <div id="projetos" class="container-fluid">
-            <section class="projetos ">
-                <h2 class="container-conteudo-titulo-secundario">Projetos</h2>
+            <section class="projetos-section ">
+                <div class="header">
+                    <h2>Projetos</h2>
+                </div>
                 <div class="container-fluid container-projetos ">
                     <div class="projeto-caixa hidden">
                         <div class="card">
@@ -158,10 +161,37 @@
                                 <h5 class="card-title">Card title</h5>
                                 <p class="card-text">Some quick example text to build on the card title and make up the
                                     bulk of the card’s content.</p>
+                                <div class="flex flex-wrap gap-2 mb-6"><span
+                                        class="px-3 py-1  bg-secondary btn-skill ">TypeScript</span><span
+                                        class="px-3 py-1  bg-secondary btn-skill">Node.js</span><span
+                                        class="px-3 py-1  bg-secondary btn-skill">SVG</span><span
+                                        class="px-3 py-1  bg-secondary btn-skill"">GitHub
+                                        Actions</span>
+                                        
+                                    </div>
+                                <div class=" btn-card-container">
+                                        <a href="#" class="btn-card btn btn-primary">Go somewhere</a>
+                                        <a href="#" class="btn-card btn btn-primary">Go somewhere</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="/img/2.svg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card’s content.</p>
+                                <div class="flex flex-wrap gap-2 mb-6">
+                                    <span class="px-3 py-1  bg-secondary btn-skill">TypeScript</span>
+                                    <span class="px-3 py-1  bg-secondary btn-skill">Node.js</span>
+                                    <span class="px-3 py-1  bg-secondary btn-skill">SVG</span>
+                                    <span class="px-3 py-1  bg-secondary btn-skill"">GitHub Actions</span>
+                                        
+                                    </div>
 
-                                <div class="btn-card-container">
-                                    <a href="#" class="btn-card btn btn-primary">Go somewhere</a>
-                                    <a href="#" class="btn-card btn btn-primary">Go somewhere</a>
+                                <div class=" btn-card-container">
+                                        <a href="#" class="btn-card btn btn-primary">Go somewhere</a>
+                                        <a href="#" class="btn-card btn btn-primary">Go somewhere</a>
                                 </div>
                             </div>
                         </div>
@@ -172,20 +202,7 @@
                                 <p class="card-text">Some quick example text to build on the card title and make up the
                                     bulk of the card’s content.</p>
 
-                                <div class="btn-card-container">
-                                    <a href="#" class="btn-card btn btn-primary">Go somewhere</a>
-                                    <a href="#" class="btn-card btn btn-primary">Go somewhere</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <img src="/img/2.svg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk of the card’s content.</p>
-
-                                <div class="btn-card-container">
+                                <div class=" btn-card-container">
                                     <a href="#" class="btn-card btn btn-primary">Go somewhere</a>
                                     <a href="#" class="btn-card btn btn-primary">Go somewhere</a>
                                 </div>
@@ -212,12 +229,10 @@
         </div>
 
         <div id="curriculo" class="container-fluid">
-            <section class="curriculo">
-
-
-                <h2 class="container-conteudo-titulo-secundario">Educação & Experiência</h2>
-
-
+            <section class="curriculo-section">
+                <div class="header">
+                    <h2>Educação & Experiência</h2>
+                </div>
                 <div class="resume-grid hidden">
                     <div class="resume-column">
                         <div class="column-title">
@@ -385,8 +400,11 @@
         </div>
 
         <div id="contato" class="container-fluid">
-            <section class="contato">
-                <h2 class="container-conteudo-titulo-secundario">Contato</h2>
+            <section class="contato-section">
+                <div class="header">
+                    <h2>Contato</h2>
+
+                </div>
             </section>
         </div>
 

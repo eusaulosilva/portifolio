@@ -28,8 +28,12 @@ body {
     padding-top: 70px;
 }
 
+h2 {
+    font-family: var(--fonte-primaria);
+}
+
 /* ==========================================================================
-   2. NAVEGAÇÃO (NAVBAR)
+2. NAVEGAÇÃO (NAVBAR)
    ========================================================================== */
 .navbar {
     padding: 0.5rem;
@@ -147,7 +151,7 @@ body {
 }
 
 /* ==========================================================================
-   4. COMPONENTES REUTILIZÁVEIS (CARDS E BOTÕES)
+4. COMPONENTES REUTILIZÁVEIS (CARDS E BOTÕES)
    ========================================================================== */
 
 /* Botões Gerais */
@@ -204,6 +208,7 @@ body {
     overflow: hidden;
 }
 
+
 .card:hover {
     transform: scale(1.03);
     border-color: var(--cor-terciaria);
@@ -214,7 +219,7 @@ body {
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    margin-top: 1.5rem;
+    margin-top: 1rem;
     width: 100%;
 }
 
@@ -223,14 +228,51 @@ body {
     text-decoration: none;
 }
 
+/* Remove o azul padrão e aplica suas cores */
+.bg-secondary.btn-skill {
+    background-color: var(--cor-bg-vidro) !important;
+    /* Fundo transparente/vidro */
+    color: var(--cor-texto-corpo) !important;
+    /* Texto Roxo */
+    border: 1px solid var(--cor-borda-vidro);
+    font-family: var(--fonte-secundaria);
+    font-size: 0.75rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    margin: 3px;
+}
+
+/* Efeito ao passar o mouse nas badges */
+.btn-skill:hover {
+    background-color: var(--cor-hover) !important;
+    color: var(--cor-secundaria) !important;
+    border-color: var(--cor-terciaria);
+    transform: translateY(-2px);
+}
+
+/* Se os botões "Go somewhere" ainda estiverem azuis, use isso: */
+.btn-primary {
+    background-color: var(--cor-terciaria) !important;
+    border-color: var(--cor-terciaria) !important;
+    color: var(--cor-secundaria) !important;
+    font-family: var(--fonte-secundaria);
+}
+
+.btn-primary:hover {
+    background-color: var(--cor-quartenaria) !important;
+    border-color: var(--cor-quartenaria) !important;
+}
+
+
 /* ==========================================================================
-   5. SEÇÃO SOBRE
+5. SEÇÃO SOBRE
    ========================================================================== */
 .sobre {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+
     padding: 5% 10%;
     gap: 2rem;
     min-height: 100vh;
@@ -241,17 +283,24 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: justify;
+    padding: 0 3%;
 }
 
-.container-conteudo-titulo-secundario {
+.header {
     text-align: center;
-    font-family: var(--fonte-primaria);
-    font-size: 3.5rem;
-    margin-top: 1rem;
-    margin-bottom: 4rem;
-
-    color: var(--cor-secundaria);
+    margin-bottom: 60px;
 }
+
+.header h2 {
+    font-family: var(--fonte-primaria);
+    font-size: 3rem;
+    color: var(--cor-secundaria);
+    margin-top: 5rem;
+
+
+}
+
 
 .container-conteudo-texto {
     width: 75%;
@@ -267,12 +316,11 @@ body {
 }
 
 /* ==========================================================================
-   6. SEÇÃO SKILLS
+6. SEÇÃO SKILLS
    ========================================================================== */
 #skill {
     background-color: #1a1a1a;
     color: var(--cor-secundaria);
-    padding: 100px 20px;
     font-family: var(--fonte-secundaria);
 }
 
@@ -281,6 +329,7 @@ body {
     grid-template-columns: repeat(3, 1fr);
     gap: 40px;
     max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -329,16 +378,22 @@ body {
 }
 
 /* ==========================================================================
-   7. SEÇÃO PROJETOS
+7. SEÇÃO PROJETOS
    ========================================================================== */
-.projetos {
+
+.projetos-section,
+.skills-section,
+.curriculo-section,
+.sobre-section,
+.contato-section {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding: 3% 5%;
     align-items: center;
-    padding: 3% 0;
     gap: 2rem;
     min-height: 100vh;
+
 }
 
 .projeto-caixa {
@@ -350,7 +405,7 @@ body {
 }
 
 /* ==========================================================================
-   8. SEÇÃO CURRÍCULO E TIMELINE
+8. SEÇÃO CURRÍCULO E TIMELINE
    ========================================================================== */
 #curriculo {
     background-color: #1a1a1a;
@@ -640,7 +695,7 @@ body {
 }
 
 /* ==========================================================================
-   11. MEDIA QUERIES (RESPONSIVIDADE)
+11. MEDIA QUERIES (RESPONSIVIDADE)
    ========================================================================== */
 
 /* Tablets e Desktops Pequenos */
@@ -651,9 +706,6 @@ body {
 }
 
 @media (max-width: 1000px) {
-    .sobre {
-        padding: 5% 5%;
-    }
 
     .container-conteudo-titulo-secundario {
         margin-top: 3em;
@@ -697,5 +749,13 @@ body {
 @media (max-width: 600px) {
     .cert-grid-v2 {
         grid-template-columns: 1fr;
+    }
+
+    .header {
+        margin: 1rem;
+    }
+
+    .header h2 {
+        font-size: 2.3rem;
     }
 }
