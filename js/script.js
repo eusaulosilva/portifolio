@@ -17,20 +17,46 @@ const observer = new IntersectionObserver((entries) => {
 const hiddenElements = document.querySelectorAll('.hidden');
 hiddenElements.forEach((el) => observer.observe(el));
 
-document.addEventListener("DOMContentLoaded", () => {
-    const track = document.querySelector('.cert-track');
-    
-    // Opcional: Ajustar a velocidade dinamicamente
-    // track.style.animationDuration = "30s";
 
-    // Intersection Observer para disparar animações de entrada se necessário
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animate-in');
+
+
+// Fechar ao clicar em um link (útil para sites de uma página só / anchors)
+document.addEventListener('DOMContentLoaded', function () {
+    const menuDropdown = document.getElementById('navbarNav');
+    const toggler = document.querySelector('.navbar-toggler');
+
+    const closeMenu = () => {
+        // Verifica se o menu está aberto (Bootstrap usa a classe 'show')
+        if (menuDropdown.classList.contains('show')) {
+            if (window.bootstrap && bootstrap.Collapse) {
+                // Tenta recuperar a instância existente para evitar conflitos
+                let instance = bootstrap.Collapse.getInstance(menuDropdown);
+                if (!instance) {
+                    instance = new bootstrap.Collapse(menuDropdown, { toggle: false });
+                }
+                instance.hide();
+            } else {
+                menuDropdown.classList.remove('show');
             }
-        });
+        }
+    };
+
+    // 1. Fecha ao clicar fora (ou tocar fora)
+    document.addEventListener('pointerdown', function (e) {
+        const isClickInside = menuDropdown.contains(e.target);
+        const isToggler = toggler && toggler.contains(e.target);
+
+        if (!isClickInside && !isToggler) {
+            closeMenu();
+        }
     });
 
-    document.querySelectorAll('.cert-card-v2').forEach(card => observer.observe(card));
+    // 2. Fecha ao clicar em um link interno
+    const links = menuDropdown.querySelectorAll('.nav-link');
+    links.forEach(link => {
+        link.addEventListener('click', () => {
+            // Pequeno delay para garantir que a navegação comece antes do menu sumir
+            setTimeout(closeMenu, 150);
+        });
+    });
 });
