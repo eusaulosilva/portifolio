@@ -548,6 +548,80 @@ h2 {
 }
 
 /* ==========================================================================
+   SEÇÃO DE CONTATO - FORMULÁRIO
+   ========================================================================== */
+.container-contato {
+    width: 100%;
+    max-width: 600px;
+    background: var(--cor-bg-vidro);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--cor-borda-vidro);
+    border-radius: 20px;
+    padding: 3rem;
+    margin-bottom: 50px;
+}
+
+.formulario-contato {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: left;
+}
+
+.input-group label {
+    font-family: var(--fonte-secundaria);
+    color: var(--cor-secundaria);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.input-group input,
+.input-group textarea {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--cor-borda-vidro);
+    border-radius: 8px;
+    padding: 0.8rem;
+    color: var(--cor-secundaria);
+    font-family: var(--fonte-secundaria);
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    outline: none;
+    border-color: var(--cor-terciaria);
+    background: rgba(147, 34, 253, 0.05);
+    box-shadow: 0 0 10px rgba(147, 34, 253, 0.2);
+}
+
+.btn-enviar {
+    width: 100% !important;
+    /* Faz o botão ocupar a largura total no mobile */
+    margin-top: 1rem;
+    border: none;
+    gap: 10px;
+}
+
+.btn-enviar:hover {
+    letter-spacing: 1px;
+}
+
+/* Ajuste para mobile */
+@media (max-width: 768px) {
+    .container-contato {
+        padding: 1.5rem;
+        width: 90%;
+    }
+}
+
+/* ==========================================================================
 10. MEDIA QUERIES (RESPONSIVIDADE)
 ========================================================================== */
 
