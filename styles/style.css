@@ -622,6 +622,10 @@ h2 {
     .header h2 {
         font-size: 2.3rem;
     }
+
+    .rodape {
+        font-size: 0.7rem;
+    }
 }
 
 /* Smartphones muito pequenos */
